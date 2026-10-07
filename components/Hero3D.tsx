@@ -26,7 +26,10 @@ function GoldParticles() {
   return (
     <points ref={points}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" count={300} array={positions} itemSize={3} />
+        <bufferAttribute
+          attach="attributes-position"
+          args={[positions, 3]}
+        />
       </bufferGeometry>
       <pointsMaterial size={0.05} color="#B08D57" transparent opacity={0.7} />
     </points>
@@ -64,7 +67,9 @@ export default function Hero3D() {
         >
           Six ways to hold onto
           <br />
-          <span className="gradient-text" style={{ fontStyle: 'italic' }}>one day, forever.</span>
+          <span className="gradient-text" style={{ fontStyle: 'italic' }}>
+            one day, forever.
+          </span>
         </motion.h1>
 
         <motion.p
